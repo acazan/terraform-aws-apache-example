@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "apache" {
-  source        = "./terraform-aws-apache-example"
+  source        = "acazan/apache-example/aws"
   vpc_id        = var.vpc_id
   cidr_blocks   = var.cidr_blocks
   public_key    = var.public_key
