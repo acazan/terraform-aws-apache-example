@@ -1,4 +1,4 @@
-Terraform Module to provision an EC2 Instance that is running Apache.
+Terraform Module to provision an EC2 Instance that is running Apache httpd server.
 Not intended for production use.
 Just showcasing how to publish a public module on Terraform Registry.
 
