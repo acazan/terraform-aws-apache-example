@@ -75,6 +75,10 @@ data "aws_ami" "amazon-linux-2" {
     name   = "name"
     values = ["amzn2-ami-hvm*"]
   }
+  filter {
+    name   = "architecture"
+    values = ["arm64"]
+  }
 }
 
 resource "aws_instance" "my_server" {
