@@ -64,6 +64,7 @@ data "template_file" "user_data" {
   template = file("${path.module}/userdata.yaml")
 }
 
+# Use al2023-ami-2023* as amzn2-ami-hvm* is old 
 data "aws_ami" "amazon-linux-2" {
   most_recent = true
   owners      = ["amazon"]
@@ -73,7 +74,7 @@ data "aws_ami" "amazon-linux-2" {
   }
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm*"]
+    values = ["al2023-ami-2023*"]
   }
   filter {
     name   = "architecture"
