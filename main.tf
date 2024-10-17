@@ -64,8 +64,7 @@ data "template_file" "user_data" {
   template = file("${path.module}/userdata.yaml")
 }
 
-# Use al2023-ami-2023* as amzn2-ami-hvm* is old 
-data "aws_ami" "amazon-linux-2" {
+data "aws_ami" "amazon-linux-2023" {
   most_recent = true
   owners      = ["amazon"]
   filter {
@@ -83,7 +82,7 @@ data "aws_ami" "amazon-linux-2" {
 }
 
 resource "aws_instance" "my_server" {
-  ami                    = data.aws_ami.amazon-linux-2.id
+  ami                    = data.aws_ami.amazon-linux-2023.id
   instance_type          = var.instance_type
   key_name               = aws_key_pair.deployer.key_name
   subnet_id              = data.aws_subnets.subnet_ids.ids[0]
